@@ -1,6 +1,6 @@
 {
   "name": "kitchenswap-frontend",
-  "homepage": "https://kitchenswap.github.io/kitchenswap-frontend/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
