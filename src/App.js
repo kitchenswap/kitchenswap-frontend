@@ -53,7 +53,7 @@ const App = () => {
         <div className='header-logo-nav-account'>
           <div className='navlogo left'>
             <NavLink to='/'>  
-              <img src='/logo192.png' alt='kitchenswap' />
+              <img src='./logo192.png' alt='kitchenswap' />
               <b>kitchen</b>swap
             </NavLink>
           </div>
@@ -96,7 +96,7 @@ const App = () => {
       <footer>
         <div className="copyrights">
           <NavLink to='/'>  
-            <img src='/logo192.png' alt='kitchenswap' />
+            <img src='./logo192.png' alt='kitchenswap' />
             <b>kitchen</b>swap
           </NavLink>
           <NavLink to='/earn'>Earn</NavLink>
