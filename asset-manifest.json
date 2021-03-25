@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/kitchenswap-frontend/static/css/main.aa725a66.chunk.css",
-    "main.js": "/kitchenswap-frontend/static/js/main.edaf6c7b.chunk.js",
-    "main.js.map": "/kitchenswap-frontend/static/js/main.edaf6c7b.chunk.js.map",
-    "runtime-main.js": "/kitchenswap-frontend/static/js/runtime-main.0aa3ccaa.js",
-    "runtime-main.js.map": "/kitchenswap-frontend/static/js/runtime-main.0aa3ccaa.js.map",
-    "static/js/2.4eb30b33.chunk.js": "/kitchenswap-frontend/static/js/2.4eb30b33.chunk.js",
-    "static/js/2.4eb30b33.chunk.js.map": "/kitchenswap-frontend/static/js/2.4eb30b33.chunk.js.map",
-    "index.html": "/kitchenswap-frontend/index.html",
-    "static/css/main.aa725a66.chunk.css.map": "/kitchenswap-frontend/static/css/main.aa725a66.chunk.css.map",
-    "static/js/2.4eb30b33.chunk.js.LICENSE.txt": "/kitchenswap-frontend/static/js/2.4eb30b33.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.aa725a66.chunk.css",
+    "main.js": "./static/js/main.edaf6c7b.chunk.js",
+    "main.js.map": "./static/js/main.edaf6c7b.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.786aff35.js",
+    "runtime-main.js.map": "./static/js/runtime-main.786aff35.js.map",
+    "static/js/2.4eb30b33.chunk.js": "./static/js/2.4eb30b33.chunk.js",
+    "static/js/2.4eb30b33.chunk.js.map": "./static/js/2.4eb30b33.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.aa725a66.chunk.css.map": "./static/css/main.aa725a66.chunk.css.map",
+    "static/js/2.4eb30b33.chunk.js.LICENSE.txt": "./static/js/2.4eb30b33.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0aa3ccaa.js",
+    "static/js/runtime-main.786aff35.js",
     "static/js/2.4eb30b33.chunk.js",
     "static/css/main.aa725a66.chunk.css",
     "static/js/main.edaf6c7b.chunk.js"
