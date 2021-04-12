@@ -26,7 +26,8 @@ export const DexDataProvider = ({ children }) => {
         tokenLogos: tokenLogosJson
       });
     });
-  }, [dexData]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const { dexUrls, dexPools, tokenLogos } = dexData;
 
