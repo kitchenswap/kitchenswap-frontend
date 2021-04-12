@@ -13,6 +13,7 @@ const useScrollFix = () => {
         window.scrollTo(0, scrollY);
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

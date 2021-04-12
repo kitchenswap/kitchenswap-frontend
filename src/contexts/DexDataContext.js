@@ -26,7 +26,7 @@ export const DexDataProvider = ({ children }) => {
         tokenLogos: tokenLogosJson
       });
     });
-  }, []);
+  }, [dexData]);
 
   const { dexUrls, dexPools, tokenLogos } = dexData;
 

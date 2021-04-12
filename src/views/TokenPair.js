@@ -91,6 +91,7 @@ const TokenPair = () => {
     return () => {
       window.document.removeEventListener("keydown", onKeyPress);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const pool = pools.find(p => {
