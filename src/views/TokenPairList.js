@@ -48,6 +48,14 @@ const formatTLV = n =>
     minimumFractionDigits: 0
   }).format(parseInt(n, 10));
 
+const formatAPR = n => {
+  const value = n.toFixed(2);
+  if (value.length > 10) {
+    return '∞%';
+  }
+  return `${n.toFixed(2)}%`;
+};
+
 const SORT_FIELDS = {
   stakeToken: "stakeToken",
   earnToken: "earnToken",
@@ -85,6 +93,7 @@ const ResponsiveFlex = styled(Flex)`
     }
     & > * {
       width: 100%;
+      overflow: hidden;
     }
   }
 `;
@@ -392,7 +401,7 @@ const TokenPairList = () => {
                     />
                   </Box>
                   <Box py="2" height="56px" lineHeight="46px">
-                    <CountUp end={pool.APR} decimals={2} suffix="%" />
+                    <CountUp end={pool.APR} decimals={2} suffix="%" formattingFn={formatAPR} />
                   </Box>
                 </ResponsiveFlex>
               </Td>
