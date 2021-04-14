@@ -10,6 +10,11 @@ const TokenButton = props => {
   const tokenLogos = useTokenLogos();
   const { thumb } =
     tokenLogos.find(logo => logo.symbol === props.children) || {};
+  
+  let boxSize;
+  if (props.size === "sm") {
+    boxSize = '20px';
+  }
 
   return (
     <Button
@@ -20,6 +25,7 @@ const TokenButton = props => {
           alt={props.children}
           fallbackSrc={tokenFallbackSrc}
           borderRadius="full"
+          boxSize={boxSize}
         />
       }
     />

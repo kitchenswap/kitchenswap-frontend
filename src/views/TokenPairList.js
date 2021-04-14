@@ -19,7 +19,8 @@ import {
   Box,
   Spacer,
   useColorModeValue,
-  Spinner
+  Spinner,
+  useMediaQuery
 } from "@chakra-ui/react";
 import {
   TriangleDownIcon,
@@ -48,9 +49,13 @@ const formatTLV = n =>
     minimumFractionDigits: 0
   }).format(parseInt(n, 10));
 
+const formatTLVSmall = n => `$${new
+  Intl.NumberFormat('en-US', { notation: 'compact' })
+  .format(n)}`;
+
 const formatAPR = n => {
   const value = n.toFixed(2);
-  if (value.length > 10) {
+  if (value.length > 8) {
     return '∞%';
   }
   return `${n.toFixed(2)}%`;
@@ -232,6 +237,15 @@ const Filters = ({ filters, onChange }) => {
 };
 
 const TokenPairList = () => {
+  const [isSmallerThan375] = useMediaQuery("(max-width: 375px)");
+  const buttonSize = isSmallerThan375 ? "sm" : "md";
+  const tlvWrapperStyles = {
+    height: isSmallerThan375 ? "48px" : "56px",
+    lineHeight: isSmallerThan375 ? "32px" : "36px"
+  }
+
+  const formatTLVfn = isSmallerThan375 ? formatTLVSmall : formatTLV;
+
   const history = useHistory();
   const { isExact } = useRouteMatch();
   const pools = useDexPools();
@@ -320,7 +334,10 @@ const TokenPairList = () => {
       }
     }
 
-    return poolTmp;
+    const filteredPools = poolTmp
+      .filter(p => p.APR > 1 && p.totalLiquidity > 1);
+
+    return filteredPools;
   }, [pools, filters, sorting]);
 
   const handlePairClick = pool => {
@@ -376,6 +393,7 @@ const TokenPairList = () => {
                       variant="outline"
                       width="120px"
                       onClick={e => handleTokenClick(e, "stakeToken", pool)}
+                      size={buttonSize}
                     >
                       {pool.stakeToken}
                     </TokenButton>
@@ -385,6 +403,7 @@ const TokenPairList = () => {
                       variant="outline"
                       width="120px"
                       onClick={e => handleTokenClick(e, "earnToken", pool)}
+                      size={buttonSize}
                     >
                       {pool.earnToken}
                     </TokenButton>
@@ -393,14 +412,14 @@ const TokenPairList = () => {
               </Td>
               <Td isNumeric>
                 <ResponsiveFlex textAlign="align-right">
-                  <Box py="2" height="56px" lineHeight="46px">
+                  <Box py="2" height={tlvWrapperStyles.height} lineHeight={tlvWrapperStyles.lineHeight}>
                     <CountUp
                       end={pool.totalLiquidity}
                       decimals={0}
-                      formattingFn={formatTLV}
+                      formattingFn={formatTLVfn}
                     />
                   </Box>
-                  <Box py="2" height="56px" lineHeight="46px">
+                  <Box py="2" height={tlvWrapperStyles.height} lineHeight={tlvWrapperStyles.lineHeight}>
                     <CountUp end={pool.APR} decimals={2} suffix="%" formattingFn={formatAPR} />
                   </Box>
                 </ResponsiveFlex>

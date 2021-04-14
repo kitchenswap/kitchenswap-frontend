@@ -8,7 +8,7 @@ import Logo from "./Logo";
 const Header = () => {
   return (
     <Flex my="2">
-      <Box py="4">
+      <Box py="4" id="header-logo">
         <NavLink to="/">
           <Logo size="md" />
         </NavLink>

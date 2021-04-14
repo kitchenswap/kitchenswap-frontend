@@ -20,8 +20,6 @@ import {
 import { ArrowBackIcon, CloseIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 
 import Token from "../components/Token";
-
-import useScrollFix from "../hooks/useScrollFix";
 import useDexPools from "../hooks/useDexPools";
 import useDexUrls from "../hooks/useDexUrls";
 import parseQueryString from "../util/parseQueryString";
@@ -68,7 +66,6 @@ const Controls = ({ onClose, children }) => (
 );
 
 const TokenPair = () => {
-  useScrollFix();
   const pools = useDexPools();
   const dexUrls = useDexUrls();
   const { stakeToken, earnToken } = useParams();
@@ -86,6 +83,8 @@ const TokenPair = () => {
   };
 
   useEffect(() => {
+    document.querySelector('#header-logo').scrollIntoView(); // a happy hack
+
     const onKeyPress = event => event.keyCode === ESCAPE_KEY && handleClose();
     window.document.addEventListener("keydown", onKeyPress);
     return () => {
