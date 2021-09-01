@@ -1,2 +1,2 @@
-# kitchenswap-frontent
+# kitchenswap-frontend
 KitchenSwap frontend
